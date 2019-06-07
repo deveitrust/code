@@ -1,15 +1,15 @@
 .border-radiuses (@rest...) when (length(@rest) = 4) {
-    border-top-right-radius:            extract(@rest, 1);
-	border-bottom-right-radius:         extract(@rest, 2);
-	border-bottom-left-radius:          extract(@rest, 3);
-	border-top-left-radius:             extract(@rest, 4);
+    border-top-right-radius:	extract(@rest, 1);
+    border-bottom-right-radius: extract(@rest, 2);
+    border-bottom-left-radius:  extract(@rest, 3);
+    border-top-left-radius:     extract(@rest, 4);
 }
 
 .border-radiuses (@rest...) when (length(@rest) = 2) {
-    border-top-right-radius:            extract(@rest, 1);
-	border-bottom-right-radius:         extract(@rest, 1);
-	border-bottom-left-radius:          extract(@rest, 2);
-	border-top-left-radius:             extract(@rest, 2);
+    border-top-right-radius:	extract(@rest, 1);
+    border-bottom-right-radius:	extract(@rest, 1);
+    border-bottom-left-radius:  extract(@rest, 2);
+    border-top-left-radius:     extract(@rest, 2);
 }
 
 .border-radiuses (@radius: 5px) {
@@ -17,13 +17,13 @@
 }
 
 .input-all {
-    .border-radiuses ();
+    .border-radiuses();
 }
 
 .input-left-right {
-    .border-radiuses ( 5px, 10px);
+    .border-radiuses(5px, 10px);
 }
 
 .input-left-right-all {
-    .border-radiuses ( 5px, 10px, 15px, 20px);
+    .border-radiuses(5px, 10px, 15px, 20px);
 }
