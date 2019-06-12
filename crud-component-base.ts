@@ -18,8 +18,8 @@ import {
 /*
  * Base generic class to work with ABP (ASP.NET Boilerplate)
  */
-export abstract class CrudComponentBase<
-    TServiceProxy extends ICrudService<TEntityDto, TPrimaryKey, TPagedResultDto, TCreateDto, TUpdateDto>,
+export abstract class CrudComponentBase<TServiceProxy extends 
+    ICrudService<TEntityDto, TPrimaryKey, TPagedResultDto, TCreateDto, TUpdateDto>,
     TEntityDto extends IEntityDto<TPrimaryKey>,
     TPrimaryKey,
     TPagedResultDto extends IPagedResultDto<TEntityDto, TPrimaryKey>,
