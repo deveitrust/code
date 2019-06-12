@@ -19,8 +19,10 @@ namespace CloudDatabase.Base
     /// <summary>
     /// Base class to work with DevExpress and ASP.NET Boilerplate
     /// </summary>
-    public abstract class DxCrudAppService<TEntity, TEntityDto, TPrimaryKey, TCreateInput, TUpdateInput, TUploadInput, TUploadOutput>
-        : AsyncCrudAppService<TEntity, TEntityDto, TPrimaryKey, PagedDxResultRequestDto, TCreateInput, TUpdateInput, EntityDto<TPrimaryKey>>,
+    public abstract class DxCrudAppService<TEntity, TEntityDto, TPrimaryKey, 
+            TCreateInput, TUpdateInput, TUploadInput, TUploadOutput>
+        : AsyncCrudAppService<TEntity, TEntityDto, TPrimaryKey, 
+            PagedDxResultRequestDto, TCreateInput, TUpdateInput, EntityDto<TPrimaryKey>>,
         IDxCrudAppService<TEntityDto, TPrimaryKey, TCreateInput, TUpdateInput>
         where TEntity : class, IEntity<TPrimaryKey>
         where TEntityDto : IEntityDto<TPrimaryKey>
@@ -165,8 +167,10 @@ namespace CloudDatabase.Base
         }
     }
 
-    public abstract class DxCrudAppService<TEntity, TEntityDto, TPrimaryKey, TCreateInput, TUpdateInput>
-        : DxCrudAppService<TEntity, TEntityDto, TPrimaryKey, TCreateInput, TUpdateInput, UploadInput, UploadOutput>
+    public abstract class DxCrudAppService<TEntity, TEntityDto, TPrimaryKey, 
+            TCreateInput, TUpdateInput>
+        : DxCrudAppService<TEntity, TEntityDto, TPrimaryKey, 
+            TCreateInput, TUpdateInput, UploadInput, UploadOutput>
         where TEntity : class, IEntity<TPrimaryKey>
         where TEntityDto : IEntityDto<TPrimaryKey>
         where TUpdateInput : IEntityDto<TPrimaryKey>
