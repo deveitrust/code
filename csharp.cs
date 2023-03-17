@@ -30,56 +30,6 @@ namespace CloudDatabase.Base
         where TUploadInput : UploadInput
         where TUploadOutput : UploadOutput
     {
-        protected static readonly object SyncRoot = new object();
-
-        #region Properties
-        public IWindsorContainer IocContainer => IocManager.Instance.IocContainer;
-
-        private IEmailSender _emailSender;
-        public IEmailSender EmailSender
-        {
-            get
-            {
-                if (_emailSender == null)
-                {
-                    _emailSender = IocContainer.Resolve<IEmailSender>();
-                }
-                return _emailSender;
-            }
-        }
-
-        private UserManager _userManager;
-        public UserManager UserManager
-        {
-            get
-            {
-                if (_userManager == null)
-                {
-                    _userManager = IocContainer.Resolve<UserManager>();
-                }
-                return _userManager;
-            }
-        }
-
-        private User _user;
-        public User User
-        {
-            get
-            {
-                if (_user == null)
-                {
-                    // get current user id from session
-                    var userId = AbpSession.UserId;
-
-                    // find user by session user id
-                    _user = UserManager.Users
-                        .FirstOrDefault(u => u.Id == userId);
-                }
-                return _user;
-            }
-        }
-        #endregion
-        
         protected DxCrudAppService(IRepository<TEntity, TPrimaryKey> repository)
             : base(repository)
         {
